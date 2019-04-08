@@ -1,8 +1,8 @@
 {
-  "name": "js-task-boilerplate",
+  "name": "capitals-first",
   "version": "1.0.0",
-  "description": "js task boilerplate",
-  "main": "src/sum.js",
+  "description": "Capitals First",
+  "main": "src/capitalsFirst.js",
   "scripts": {
     "test": "jest",
     "lint": "eslint **/*.js"

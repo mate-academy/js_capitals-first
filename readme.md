@@ -1,4 +1,4 @@
-# Boilerplate for JS tasks
+# Capitals First
 
 **Read the guideline before start**
 
