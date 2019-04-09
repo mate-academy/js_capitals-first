@@ -21,7 +21,22 @@
  * @returns {string} - string with uppercase words in front
  */
 function capitalsFirst(str) {
-  // write code here
+  let splitedArray = str.split(' ');
+  let lowers = [];
+  let uppers = [];
+  let result = '';
+  splitedArray.filter(function(item) {
+    if ((item[0] >= 'a' && item[0] <= 'z') ||
+      (item[0] >= 'A' && item[0] <= 'Z')) {
+      if (item[0] !== item[0].toUpperCase()) {
+        lowers.push(item);
+      } else {
+        uppers.push(item);
+      }
+    }
+  });
+  result = `${uppers.join(' ')} ${lowers.join(' ')}`.trim();
+  return result;
 }
 
 module.exports = capitalsFirst;
