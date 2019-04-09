@@ -13,9 +13,6 @@
  *
  * capitalFirst("hey You, Sort me Already!") === "You, Sort Already! hey me"
  *
- * capitalsFirst(1, 2) === 3
- * capitalsFirst(1, 11) === 12
- *
  * @param {string} str
  *
  * @returns {string} - string with uppercase words in front
