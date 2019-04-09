@@ -20,19 +20,24 @@
  *
  * @returns {string} - string with uppercase words in front
  */
+
 function capitalsFirst(str) {
-  let sortWords = [];
-  str.split(' ').forEach(word => {
-    if (word[0].charCodeAt() > 64 && word[0].charCodeAt() < 91) {
-      sortWords.push(word);
+  let bigFirstletter = [];
+  let smallFirsLetter = [];
+  function isBigLetter(word) {
+    return word[0].charCodeAt() > 64 && word[0].charCodeAt() < 91;
+  }
+  function isSmallLetter(word) {
+    return word[0].charCodeAt() > 96 && word[0].charCodeAt() < 123;
+  }
+  for (let word of str.split(' ')) {
+    if (isBigLetter(word)) {
+      bigFirstletter.push(word);
+    } else if (isSmallLetter(word)) {
+      smallFirsLetter.push(word);
     }
-  });
-  str.split(' ').forEach(word => {
-    if (word[0].charCodeAt() > 96 && word[0].charCodeAt() < 123) {
-      sortWords.push(word);
-    }
-  });
-  return sortWords.join(' ');
+  }
+  return bigFirstletter.concat(smallFirsLetter).join(' ');
 }
 
 module.exports = capitalsFirst;
