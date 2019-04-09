@@ -19,6 +19,19 @@
  */
 function capitalsFirst(str) {
   // write code here
-}
+  let arr = str.split(' ');
+  let arrUpperCase = [];
+  let arrLowerCase = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i][0] >= 'A' && arr[i][0] <= 'Z') {
+      arrUpperCase.push(arr[i]);
+    }
+    if (arr[i][0] >= 'a' && arr[i][0] <= 'z') {
+      arrLowerCase.push(arr[i]);
+    }
+  }
+  let concatingArr = arrUpperCase.concat(arrLowerCase);
+  return (concatingArr.join(' '));
+};
 
 module.exports = capitalsFirst;
