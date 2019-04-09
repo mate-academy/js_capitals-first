@@ -30,7 +30,7 @@ function capitalsFirst(str) {
     }
   });
   filteredWords.map((word) => {
-    if (checkCase(word[0])) {
+    if (isUpperCase(word[0])) {
       upperCaseWords.push(word);
     } else {
       lowerCaseWords.push(word);
@@ -39,13 +39,8 @@ function capitalsFirst(str) {
   return upperCaseWords.concat(lowerCaseWords).join(' ');
 }
 
-function checkCase(ch) {
-  let upperCh = ch.toUpperCase();
-  if (upperCh === ch && upperCh === ch) {
-    return true;
-  } else {
-    return false;
-  }
+function isUpperCase(ch) {
+  return ch.toUpperCase() === ch;
 }
 
 module.exports = capitalsFirst;
