@@ -21,19 +21,21 @@
  * @returns {string} - string with uppercase words in front
  */
 function capitalsFirst(str) {
-  let arr = str.split(' ');
+  let wordList = str.split(' ');
   let arrUpper = [];
   let arrLower = [];
 
-  for (let word of arr) {
+  for (let word of wordList) {
+    const _wordCode = word.charCodeAt(0);
+
     if (word[0] === word[0].toLowerCase() &&
-        word.charCodeAt(0) <= 122 &&
-        word.charCodeAt(0) >= 97) {
+        _wordCode <= 122 &&
+        _wordCode >= 97) {
       arrLower.push(word);
     }
     if (word[0] !== word[0].toLowerCase() &&
-        word.charCodeAt(0) <= 90 &&
-        word.charCodeAt(0) >= 65) {
+        _wordCode <= 90 &&
+        _wordCode >= 65) {
       arrUpper.push(word);
     }
   }
