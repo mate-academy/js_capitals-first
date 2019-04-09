@@ -21,13 +21,14 @@
  * @returns {string} - string with uppercase words in front
  */
 function capitalsFirst(str) {
-  let words = str.split(' ');
-  let upperCaseWords = [];
-  let lowerCaseWords = [];
-  let filteredWords = words.filter((word) => {
-    if (word[0].toLowerCase() <= 'z' && word[0].toLowerCase() >= 'a') {
-      return word;
-    }
+  const words = str.split(' ');
+  const upperCaseWords = [];
+  const lowerCaseWords = [];
+  const FIRST_LOWERCASE_LETTER = 'a';
+  const LAST_LOWERCASE_LETTER = 'z';
+  const filteredWords = words.filter((word) => {
+    return isLowercaseLetter(word) <= LAST_LOWERCASE_LETTER &&
+        isLowercaseLetter(word) >= FIRST_LOWERCASE_LETTER;
   });
   filteredWords.map((word) => {
     if (isUpperCase(word[0])) {
@@ -41,6 +42,9 @@ function capitalsFirst(str) {
 
 function isUpperCase(ch) {
   return ch.toUpperCase() === ch;
+}
+function isLowercaseLetter(wd) {
+  return wd[0].toLowerCase();
 }
 
 module.exports = capitalsFirst;
