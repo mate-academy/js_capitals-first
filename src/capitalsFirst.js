@@ -19,9 +19,9 @@
  */
 function capitalsFirst(str) {
   // write code here
-  let arr = str.split(' ');
-  let arrUpperCase = [];
-  let arrLowerCase = [];
+  const arr = str.split(' ');
+  const arrUpperCase = [];
+  const arrLowerCase = [];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i][0] >= 'A' && arr[i][0] <= 'Z') {
       arrUpperCase.push(arr[i]);
@@ -30,7 +30,7 @@ function capitalsFirst(str) {
       arrLowerCase.push(arr[i]);
     }
   }
-  let concatingArr = arrUpperCase.concat(arrLowerCase);
+  const concatingArr = arrUpperCase.concat(arrLowerCase);
   return (concatingArr.join(' '));
 };
 
