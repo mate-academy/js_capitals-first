@@ -30,7 +30,7 @@ function capitalsFirst(str) {
     return isLowercaseLetter(word) <= LAST_LOWERCASE_LETTER &&
         isLowercaseLetter(word) >= FIRST_LOWERCASE_LETTER;
   });
-  filteredWords.map((word) => {
+  filteredWords.forEach((word) => {
     if (isUpperCase(word[0])) {
       upperCaseWords.push(word);
     } else {
@@ -40,8 +40,8 @@ function capitalsFirst(str) {
   return upperCaseWords.concat(lowerCaseWords).join(' ');
 }
 
-function isUpperCase(ch) {
-  return ch.toUpperCase() === ch;
+function isUpperCase(letter) {
+  return letter.toUpperCase() === letter;
 }
 function isLowercaseLetter(wd) {
   return wd[0].toLowerCase();
