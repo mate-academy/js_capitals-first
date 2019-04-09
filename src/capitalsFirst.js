@@ -22,7 +22,7 @@
  */
 
 function capitalsFirst(str) {
-  let array = str.split(' ');
+  const array = str.split(' ');
   const upperCase = [];
   const lowerCase = [];
   array.forEach(function(item) {
