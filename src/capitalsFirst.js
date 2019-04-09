@@ -23,18 +23,18 @@
 
 function capitalsFirst(str) {
   let array = str.split(' ');
-  let upperCase = [];
-  let lowerCase = [];
-  for (let i = 0; i < array.length; i++) {
-    let letter = array[i].charAt(0);
-
-    if (letter >= 'A' && letter <= 'Z') {
-      upperCase.push(array[i]);
+  const upperCase = [];
+  const lowerCase = [];
+  array.forEach(function(item) {
+    let i = item.charAt(0);
+    if (i >= 'A' && i <= 'Z') {
+      upperCase.push(item);
     }
-    if (letter >= 'a' && letter <= 'z') {
-      lowerCase.push(array[i]);
+    if (i >= 'a' && i <= 'z') {
+      lowerCase.push(item);
     }
   }
+  );
   return upperCase.concat(lowerCase).join(' ');
 }
 
