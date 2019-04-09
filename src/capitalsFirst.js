@@ -22,10 +22,17 @@
  */
 function capitalsFirst(str) {
   let sortWords = [];
-  str.split(' ').forEach(word => word[0].charCodeAt() > 64 &&
-   word[0].charCodeAt() < 91 ? sortWords.push(word) : false);
-  str.split(' ').forEach(word => word[0].charCodeAt() > 96 &&
-  word[0].charCodeAt() < 123 ? sortWords.push(word) : false);
+  str.split(' ').forEach(word => {
+    if (word[0].charCodeAt() > 64 && word[0].charCodeAt() < 91) {
+      sortWords.push(word);
+    }
+  });
+  str.split(' ').forEach(word => {
+    if (word[0].charCodeAt() > 96 && word[0].charCodeAt() < 123) {
+      sortWords.push(word);
+    }
+  });
   return sortWords.join(' ');
 }
+
 module.exports = capitalsFirst;
