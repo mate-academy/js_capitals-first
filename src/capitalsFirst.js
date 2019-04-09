@@ -37,7 +37,7 @@ function capitalsFirst(str) {
       lowerCaseWords.push(word);
     }
   });
-  return upperCaseWords.concat(lowerCaseWords).join(' ');
+  return [...upperCaseWords, ...lowerCaseWords].join(' ');
 }
 
 function isUpperCase(letter) {
