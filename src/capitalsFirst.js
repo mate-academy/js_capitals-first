@@ -20,8 +20,20 @@
  *
  * @returns {string} - string with uppercase words in front
  */
-function capitalsFirst(str) {
-  // write code here
+
+function capitalFirst(str) {
+  let firstIsUpper = [];
+  let firstIsLower = [];
+  let strToArr = str.split(' ');
+
+  for (var i = 0; i < strToArr.length; i++) {
+    if (strToArr[i][0] >= 'A' && strToArr[i][0] <= 'Z') {
+      firstIsUpper.push(strToArr[i]);
+    } else if (strToArr[i][0] >= 'a' && strToArr[i][0] <= 'z') {
+      firstIsLower.push(strToArr[i]);
+    }
+  }
+  return firstIsUpper.concat(firstIsLower).join(' ');
 }
 
-module.exports = capitalsFirst;
+module.exports = capitalFirst;
