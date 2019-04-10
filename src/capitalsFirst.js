@@ -30,12 +30,12 @@ function capitalsFirst(str) {
   let resLow = [];
 
   wordsArray.forEach((item) => {
-    if (item[0].charCodeAt(0) < 65 ||
-      (item[0].charCodeAt(0) > 90 && item[0].charCodeAt(0) < 97) ||
-      item[0].charCodeAt(0) > 122) {
+    if (item[0][0] < 'A' ||
+      (item[0][0] > 'Z' && item[0][0] < 'a') ||
+      item[0][0] > 'z') {
       return;
     }
-    if (item[0].charCodeAt(0) > 64 && item[0].charCodeAt(0) < 91) {
+    if (item[0][0] >= 'A' && item[0][0] <= 'Z') {
       resUp.push(item);
     } else {
       resLow.push(item);
