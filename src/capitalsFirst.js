@@ -27,13 +27,12 @@ function isLowerCase(firstLetter) {
 }
 
 function capitalsFirst(str) {
-  let lowerCaseWords = [];
-  let upperCaseWords = [];
-  let inputWords = str.split(' ');
-  let firstLetter = '';
+  const lowerCaseWords = [];
+  const upperCaseWords = [];
+  const inputWords = str.split(' ');
 
-  inputWords.forEach(function(item, i, arr) {
-    firstLetter = item[0];
+  inputWords.forEach((item) => {
+    const firstLetter = item[0];
     if (isUpperCase(firstLetter)) {
       upperCaseWords.push(item);
     } else if (isLowerCase(firstLetter)) {
