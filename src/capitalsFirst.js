@@ -22,22 +22,22 @@
  */
 
 function capitalsFirst(str) {
-  let bigFirstletter = [];
-  let smallFirsLetter = [];
+  const bigFirstletter = [];
+  const smallFirsLetter = [];
   function isBigLetter(word) {
     return word[0].charCodeAt() > 64 && word[0].charCodeAt() < 91;
   }
   function isSmallLetter(word) {
     return word[0].charCodeAt() > 96 && word[0].charCodeAt() < 123;
   }
-  for (let word of str.split(' ')) {
+  str.split(' ').forEach(word => {
     if (isBigLetter(word)) {
       bigFirstletter.push(word);
     } else if (isSmallLetter(word)) {
       smallFirsLetter.push(word);
     }
-  }
-  return bigFirstletter.concat(smallFirsLetter).join(' ');
+  });
+  return [...bigFirstletter, ...smallFirsLetter].join(' ');
 }
 
 module.exports = capitalsFirst;
