@@ -29,8 +29,7 @@ function capitalsFirst(str) {
   strToArray.forEach(element => {
     if (isUpper(element[0])) {
       upperArray.push(element);
-    }
-    if (isLower(element[0])) {
+    } else if (isLower(element[0])) {
       lowerArray.push(element);
     }
   });
@@ -38,12 +37,9 @@ function capitalsFirst(str) {
   return [...upperArray, ...lowerArray].join(' ');
 }
 
-function isUpper(symbol) {
-  return symbol >= 'A' && symbol <= 'Z';
-}
-function isLower(symbol) {
-  return symbol >= 'a' && symbol <= 'z';
-}
+const isLetter = s => s.toUpperCase() !== s.toLowerCase();
+const isUpper = symbol => symbol.toUpperCase() === symbol && isLetter(symbol);
+const isLower = symbol => symbol.toLowerCase() === symbol && isLetter(symbol);
 
 capitalsFirst('d2ffa =8du yh Ug7');
 module.exports = capitalsFirst;
