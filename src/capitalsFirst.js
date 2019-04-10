@@ -19,25 +19,23 @@
  */
 function capitalsFirst(str) {
   const filtred = function(elem) {
-    return (
-      (elem.charAt(0) >= 'a' && elem.charAt(0) <= 'z') ||
-      (elem.charAt(0) >= 'A' && elem.charAt(0) <= 'Z')
-    );
+    return (elem.charAt(0) >= 'a' && elem.charAt(0) <= 'z') ||
+      (elem.charAt(0) >= 'A' && elem.charAt(0) <= 'Z');
   };
-  let arr = str.split(' ').filter(filtred);
-  let newArr = str.toLowerCase().split(' ');
-  let lowerCase = '';
-  let upperCase = '';
+  const arr = str.split(' ').filter(filtred);
+  const newArr = str.toLowerCase().split(' ');
+  let lowerCase = [];
+  let upperCase = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (newArr.includes(arr[i]) === false) {
-      upperCase += arr[i] + ' ';
+  arr.forEach(function(item, index, arr) {
+    if (newArr.includes(arr[index]) === false) {
+      upperCase.push(item);
     } else {
-      lowerCase += arr[i] + ' ';
+      lowerCase.push(item);
     }
-  }
+  });
 
-  let result = (upperCase + lowerCase).trim();
+  let result = upperCase.concat(lowerCase).join(' ');
   return result;
 }
 
