@@ -19,13 +19,10 @@
  */
 function capitalsFirst(str) {
   // write code here
-  let array = str.split(' ');
-  let capital = array.filter(item => item[0] >= 'A' && item[0] <= 'Z');
-  let otherWords = array.filter(item => item[0] >= 'a' && item[0] <= 'z');
-  if (otherWords.length === 0) {
-    return capital.join(' ');
-  };
-  return `${capital.join(' ')} ${otherWords.join(' ')}`;
+  const words = str.split(' ');
+  const capitalsWords = words.filter(item => item[0] >= 'A' && item[0] <= 'Z');
+  const otherWords = words.filter(item => item[0] >= 'a' && item[0] <= 'z');
+  return [...capitalsWords, ...otherWords].join(' ');
 }
 
 module.exports = capitalsFirst;
