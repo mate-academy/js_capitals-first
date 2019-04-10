@@ -17,8 +17,25 @@
  *
  * @returns {string} - string with uppercase words in front
  */
+function isLowerCased(str) {
+  return str.length > 0 && str[0] >= 'a' && str[0] <= 'z';
+}
+
+function isUpperCased(str) {
+  return str.length > 0 && str[0] >= 'A' && str[0] <= 'Z';
+}
+
 function capitalsFirst(str) {
-  // write code here
+  let arr = str.split(' ');
+  let UpperStrArr = arr.filter(function(str) {
+    return isUpperCased(str);
+  });
+  let LowerStrArr = arr.filter(function(str) {
+    return isLowerCased(str);
+  });
+  let concatTwoArr = UpperStrArr.concat(LowerStrArr);
+  str = concatTwoArr.join(' ');
+  return str;
 }
 
 module.exports = capitalsFirst;
