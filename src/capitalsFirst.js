@@ -24,27 +24,21 @@ function capitalsFirst(str) {
   const words = str.split(' ');
   const upperCaseWords = [];
   const lowerCaseWords = [];
-  const FIRST_LOWERCASE_LETTER = 'a';
-  const LAST_LOWERCASE_LETTER = 'z';
-  const filteredWords = words.filter((word) => {
-    return isLowercaseLetter(word) <= LAST_LOWERCASE_LETTER &&
-        isLowercaseLetter(word) >= FIRST_LOWERCASE_LETTER;
-  });
-  filteredWords.forEach((word) => {
-    if (isUpperCase(word[0])) {
-      upperCaseWords.push(word);
-    } else {
+  words.forEach((word) => {
+    if (isLowerCase(word[0])) {
       lowerCaseWords.push(word);
+    } else if (isUpperCase(word[0])) {
+      upperCaseWords.push(word);
     }
   });
   return [...upperCaseWords, ...lowerCaseWords].join(' ');
 }
 
 function isUpperCase(letter) {
-  return letter.toUpperCase() === letter;
+  return (letter >= 'A' && letter <= 'Z');
 }
-function isLowercaseLetter(wd) {
-  return wd[0].toLowerCase();
+function isLowerCase(letter) {
+  return (letter >= 'a' && letter <= 'z');
 }
 
 module.exports = capitalsFirst;
