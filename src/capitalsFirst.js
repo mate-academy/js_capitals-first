@@ -22,22 +22,22 @@
  */
 function capitalsFirst(str) {
   const arrayOfStr = str.split(' ');
-  let capitalsFirstArr = [];
-  let nonCapitalsFirstArr = [];
+  const capitalFirstArr = [];
+  const nonCapitalFirstArr = [];
 
-  for (let i = 0; i < arrayOfStr.length; i++) {
-    const firstLetterCode = arrayOfStr[i][0].charCodeAt();
+  arrayOfStr.forEach(i => {
+    const firstLetter = i[0];
 
-    if (firstLetterCode >= 65 && firstLetterCode <= 90) {
-      capitalsFirstArr.push(arrayOfStr[i]);
+    if (firstLetter >= 'A' && firstLetter <= 'Z') {
+      capitalFirstArr.push(i);
     }
 
-    if (firstLetterCode >= 97 && firstLetterCode <= 122) {
-      nonCapitalsFirstArr.push(arrayOfStr[i]);
+    if (firstLetter >= 'a' && firstLetter <= 'z') {
+      nonCapitalFirstArr.push(i);
     }
-  }
+  });
 
-  return (capitalsFirstArr.concat(nonCapitalsFirstArr)).join(' ');
+  return [...capitalFirstArr, ...nonCapitalFirstArr].join(' ');
 }
 
 module.exports = capitalsFirst;
