@@ -22,11 +22,11 @@
  */
 function capitalsFirst(str) {
   // write code here
-  let strToArray = str.split(' ');
+  let transformedString = str.split(' ');
   let upperArray = [];
   let lowerArray = [];
 
-  strToArray.forEach(element => {
+  transformedString.forEach(element => {
     if (isUpper(element[0])) {
       upperArray.push(element);
     } else if (isLower(element[0])) {
@@ -41,5 +41,4 @@ const isLetter = s => s.toUpperCase() !== s.toLowerCase();
 const isUpper = symbol => symbol.toUpperCase() === symbol && isLetter(symbol);
 const isLower = symbol => symbol.toLowerCase() === symbol && isLetter(symbol);
 
-capitalsFirst('d2ffa =8du yh Ug7');
 module.exports = capitalsFirst;
