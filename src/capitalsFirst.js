@@ -30,7 +30,7 @@ function capitalsFirst(str) {
   const uppercaseLetters = [];
   const lowercaseLetters = [];
 
-  initialArray.forEach(function(i) {
+  initialArray.forEach(i => {
     if (isLowercaseLetter(i[0])) {
       lowercaseLetters.push(i);
     }
