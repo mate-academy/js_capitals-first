@@ -20,26 +20,27 @@
  *
  * @returns {string} - string with uppercase words in front
  */
+function isLatinLowerCased(str) {
+  return str.length > 0 && str[0] >= 'a' && str[0] <= 'z';
+}
+
+function isLatinUpperCased(str) {
+  return str.length > 0 && str[0] >= 'A' && str[0] <= 'Z';
+}
+
 function capitalsFirst(str) {
   let wordList = str.split(' ');
-  let arrUpper = [];
-  let arrLower = [];
+  let wordUpperCased = [];
+  let wordLowerCased = [];
 
   for (let word of wordList) {
-    const _wordCode = word.charCodeAt(0);
-
-    if (word[0] === word[0].toLowerCase() &&
-        _wordCode <= 122 &&
-        _wordCode >= 97) {
-      arrLower.push(word);
-    }
-    if (word[0] !== word[0].toLowerCase() &&
-        _wordCode <= 90 &&
-        _wordCode >= 65) {
-      arrUpper.push(word);
+    if (isLatinLowerCased(word)) {
+      wordLowerCased.push(word);
+    } else if (isLatinUpperCased(word)) {
+      wordUpperCased.push(word);
     }
   }
-  return arrUpper.concat(arrLower).join(' ');
+  return [...wordUpperCased, ...wordLowerCased].join(' ');
 };
 
 module.exports = capitalsFirst;
