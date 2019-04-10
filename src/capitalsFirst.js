@@ -33,7 +33,7 @@ function capitalsFirst(str) {
       continue;
     }
   }
-  return arrayUp.concat(arrayLow).join(' ');
+  return [...arrayUp, ...arrayLow].join(' ');
 }
 
 module.exports = capitalsFirst;
