@@ -33,10 +33,7 @@ function capitalsFirst(str) {
   str.split(' ').forEach(word => {
     if (isBigLetter(word)) {
       bigFirstletter.push(word);
-    }
-  });
-  str.split(' ').forEach(word => {
-    if (isSmallLetter(word)) {
+    } else if (isSmallLetter(word)) {
       smallFirsLetter.push(word);
     }
   });
