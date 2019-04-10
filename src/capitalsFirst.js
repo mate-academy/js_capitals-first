@@ -34,6 +34,7 @@ function capitalsFirst(str) {
       lowerArray.push(element);
     }
   });
+  // Early i used concat-method in return
   return [...upperArray, ...lowerArray].join(' ');
 }
 
