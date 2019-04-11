@@ -18,19 +18,19 @@
  * @returns {string} - string with uppercase words in front
  */
 function capitalsFirst(str) {
-  var arr = str.split(' ');
-  var UpperCaseArr = [];
-  var LowerCaseArr = [];
+  let words = str.split(' ');
+  let upperCaseArr = [];
+  let lowerCaseArr = [];
 
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[i].charAt(0) >= 'A' && arr[i].charAt(0) <= 'Z') {
-      UpperCaseArr.push(arr[i]);
+  words.forEach(function(element) {
+    if (element.charAt(0) >= 'A' && element.charAt(0) <= 'Z') {
+      upperCaseArr.push(element);
     }
-    if (arr[i].charAt(0) >= 'a' && arr[i].charAt(0) <= 'z') {
-      LowerCaseArr.push(arr[i]);
+    if (element.charAt(0) >= 'a' && element.charAt(0) <= 'z') {
+      lowerCaseArr.push(element);
     }
-  }
-  return UpperCaseArr.concat(LowerCaseArr).join(' ');
+  });
+  return [...upperCaseArr, ...lowerCaseArr].join(' ');
 }
 
 capitalsFirst('hey You, Sort me Already!');
