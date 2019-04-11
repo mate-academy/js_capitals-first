@@ -25,9 +25,14 @@ function capitalsFirst(str) {
   for (let i = 0; i < arr.length; i++) {
     var symbol = '';
     symbol = arr[i].charAt(0);
-    if (symbol >= 'A' && symbol <= 'Z') {
+    var antiSymbol = symbol;
+    if (symbol.toUpperCase() === symbol.toLowerCase()) {
+      continue;
+    }
+    // Ну зато теперь тут нет условия (symbol >= 'A' && symbol <= 'Z') :)
+    if (antiSymbol.toUpperCase() === symbol) {
       upperCase.push(arr[i]);
-    } else if (symbol >= 'a' && symbol <= 'z') {
+    } else if (antiSymbol.toLowerCase() === symbol) {
       lowerCase.push(arr[i]);
     }
   }
