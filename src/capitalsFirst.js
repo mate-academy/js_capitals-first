@@ -37,5 +37,4 @@ function capitalsFirst(str) {
   str = concatTwoArr.join(' ');
   return str;
 }
-console.log(capitalsFirst('hey You, Sort me Already!'));
 module.exports = capitalsFirst;
