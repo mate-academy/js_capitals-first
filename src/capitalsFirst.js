@@ -18,13 +18,13 @@
  * @returns {string} - string with uppercase words in front
  */
 function isLowerCased(str) {
-  return str.length > 0 && str[0] >= 'a' && str[0] <= 'z';
+  return (str[0].toLowerCase() === str[0]) &&
+  (str[0].toLowerCase() !== str[0].toUpperCase());
 }
-
 function isUpperCased(str) {
-  return str.length > 0 && str[0] >= 'A' && str[0] <= 'Z';
+  return (str[0].toUpperCase() === str[0]) &&
+  (str[0].toLowerCase() !== str[0].toUpperCase());
 }
-
 function capitalsFirst(str) {
   let arr = str.split(' ');
   let UpperStrArr = arr.filter(function(str) {
@@ -37,5 +37,5 @@ function capitalsFirst(str) {
   str = concatTwoArr.join(' ');
   return str;
 }
-
+console.log(capitalsFirst('hey You, Sort me Already!'));
 module.exports = capitalsFirst;
