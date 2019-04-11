@@ -21,11 +21,11 @@
  * @returns {string} - string with uppercase words in front
  */
 function isUpperCased(word) {
-  return word !== '' && word[0] >= 'A' && word[0] <= 'Z';
+  return word && /[A-Z]/.test(word[0]);
 }
 
 function isLowerCased(word) {
-  return word !== '' && word[0] >= 'a' && word[0] <= 'z';
+  return word && /[a-z]/.test(word[0]);
 }
 
 function capitalsFirst(str) {
