@@ -22,16 +22,20 @@ function capitalsFirst(str) {
   const arr = str.split(' ');
   const arrUpperCase = [];
   const arrLowerCase = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i][0] >= 'A' && arr[i][0] <= 'Z') {
-      arrUpperCase.push(arr[i]);
+  arr.forEach((word) => {
+    if (isUpperCase(word[0])) {
+      arrUpperCase.push(word);
+    } else if (isLowerCase(word[0])) {
+      arrLowerCase.push(word);
     }
-    if (arr[i][0] >= 'a' && arr[i][0] <= 'z') {
-      arrLowerCase.push(arr[i]);
-    }
-  }
-  const concatingArr = arrUpperCase.concat(arrLowerCase);
-  return (concatingArr.join(' '));
-};
+  });
+  return [...arrUpperCase, ...arrLowerCase].join(' ');
+}
+function isUpperCase(letter) {
+  return (letter >= 'A' && letter <= 'Z');
+}
+function isLowerCase(letter) {
+  return (letter >= 'a' && letter <= 'z');
+}
 
 module.exports = capitalsFirst;
