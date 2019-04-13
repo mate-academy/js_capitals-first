@@ -20,8 +20,15 @@
 function capitalsFirst(str) {
   // write code here
   const words = str.split(' ');
-  const capitalsWords = words.filter(item => item[0] >= 'A' && item[0] <= 'Z');
-  const otherWords = words.filter(item => item[0] >= 'a' && item[0] <= 'z');
+  const capitalsWords = [];
+  const otherWords = [];
+  words.filter(item => {
+    if (item[0] >= 'A' && item[0] <= 'Z') {
+      capitalsWords.push(item);
+    } else if (item[0] >= 'a' && item[0] <= 'z') {
+      otherWords.push(item);
+    }
+  });
   return [...capitalsWords, ...otherWords].join(' ');
 }
 
