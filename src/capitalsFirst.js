@@ -30,12 +30,10 @@ function capitalsFirst(str) {
   let resLow = [];
 
   wordsArray.forEach((item) => {
-    if (item[0][0] < 'A' ||
-      (item[0][0] > 'Z' && item[0][0] < 'a') ||
-      item[0][0] > 'z') {
+    if (item[0].toUpperCase() < 'A' || item[0].toUpperCase() > 'Z') {
       return;
     }
-    if (item[0][0] >= 'A' && item[0][0] <= 'Z') {
+    if (item[0] >= 'A' && item[0] <= 'Z') {
       resUp.push(item);
     } else {
       resLow.push(item);
