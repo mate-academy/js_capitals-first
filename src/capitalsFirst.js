@@ -20,7 +20,7 @@
 
 function capitalsFirst(someString) {
   let str = someString.split(' ');
-  let allString = [];
+  let allString = '';
   let arrCapital = [];
   let arrSmall = [];
 
