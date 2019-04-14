@@ -22,12 +22,8 @@
  */
 function capitalsFirst(str) {
   const wordsArray = str.split(' ');
-  const isUpperCasedLetter = function(word) {
-    return (word[0] >= 'A' && word[0] <= 'Z');
-  };
-  const isLowerCasedLetter = function(word) {
-    return (word[0] >= 'a' && word[0] <= 'z');
-  };
+  const isUpperCasedLetter = word => (word[0] >= 'A' && word[0] <= 'Z');
+  const isLowerCasedLetter = word => (word[0] >= 'a' && word[0] <= 'z');
   const upperWords = wordsArray.filter(isUpperCasedLetter);
   const lowerWords = wordsArray.filter(isLowerCasedLetter);
   return [...upperWords, ...lowerWords].join(' ');
