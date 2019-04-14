@@ -28,8 +28,8 @@ function capitalsFirst(str) {
   const isLowerCasedLetter = function(word) {
     return (word[0] >= 'a' && word[0] <= 'z');
   };
-  let upperWords = wordsArray.filter(isUpperCasedLetter);
-  let lowerWords = wordsArray.filter(isLowerCasedLetter);
+  const upperWords = wordsArray.filter(isUpperCasedLetter);
+  const lowerWords = wordsArray.filter(isLowerCasedLetter);
   return [...upperWords, ...lowerWords].join(' ');
 }
 
