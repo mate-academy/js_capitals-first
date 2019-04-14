@@ -22,11 +22,15 @@
  */
 function capitalsFirst(str) {
   const wordsArray = str.split(' ');
-  let upperWords = wordsArray.filter(word => word[0] >= 'A' && word[0] <= 'Z');
-  let lowerWords = wordsArray.filter(word => word[0] >= 'a' && word[0] <= 'z');
-  const resultArray = upperWords.concat(lowerWords);
-  const resultString = resultArray.join(' ');
-  return resultString;
+  const isUpperCasedLetter = function(word) {
+    return (word[0] >= 'A' && word[0] <= 'Z');
+  };
+  const isLowerCasedLetter = function(word) {
+    return (word[0] >= 'a' && word[0] <= 'z');
+  };
+  let upperWords = wordsArray.filter(isUpperCasedLetter);
+  let lowerWords = wordsArray.filter(isLowerCasedLetter);
+  return [...upperWords, ...lowerWords].join(' ');
 }
 
 module.exports = capitalsFirst;
