@@ -17,22 +17,19 @@
  *
  * @returns {string} - string with uppercase words in front
  */
-function isLowerCased(str) {
-  return (str[0].toLowerCase() === str[0]) &&
-  (str[0].toLowerCase() !== str[0].toUpperCase());
-}
-function isUpperCased(str) {
-  return (str[0].toUpperCase() === str[0]) &&
-  (str[0].toLowerCase() !== str[0].toUpperCase());
-}
 function capitalsFirst(str) {
-  let arr = str.split(' ');
-  let UpperStrArr = arr.filter(function(str) {
-    return isUpperCased(str);
-  });
-  let LowerStrArr = arr.filter(function(str) {
-    return isLowerCased(str);
-  });
+  let UpperStrArr = [];
+  let LowerStrArr = [];
+  let arrWords = str.split(' ');
+  for (let i = 0; i < arrWords.length; i++) {
+    if (arrWords[i][0].toLowerCase() === arrWords[i][0].toUpperCase()) {
+      continue;
+    } else if (arrWords[i][0].toLowerCase() === arrWords[i][0]) {
+      LowerStrArr.push(arrWords[i]);
+    } else {
+      UpperStrArr.push(arrWords[i]);
+    }
+  }
   let concatTwoArr = UpperStrArr.concat(LowerStrArr);
   str = concatTwoArr.join(' ');
   return str;
