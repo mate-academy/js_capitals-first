@@ -22,8 +22,8 @@ function capitalsFirst(str) {
   let lowerWords = [];
   str.split(' ').map((el) => {
     return isNaN(el[0]) && el[0] !== '='
-      ? false : el[0] === el[0].toUpperCase()
-        ? upperWords.push(el) : lowerWords.push(el);
+      ? el[0] === el[0].toUpperCase()
+        ? upperWords.push(el) : lowerWords.push(el) : false;
     // if (el[0] === el[0].toUpperCase() && isNaN(el[0]) && el[0] !== '=') {
     //   upperWords.push(el);
     // } else if (isNaN(el[0]) && el[0] !== '=') {
