@@ -24,8 +24,7 @@ function capitalsFirst(str) {
   let splitedArray = str.split(' ');
   let lowers = [];
   let uppers = [];
-  let result = '';
-  splitedArray.filter(function(item) {
+  splitedArray.filter((item) => {
     if ((item[0] >= 'a' && item[0] <= 'z') ||
       (item[0] >= 'A' && item[0] <= 'Z')) {
       if (item[0] !== item[0].toUpperCase()) {
@@ -35,8 +34,7 @@ function capitalsFirst(str) {
       }
     }
   });
-  result = `${uppers.join(' ')} ${lowers.join(' ')}`.trim();
-  return result;
+  return `${uppers.join(' ')} ${lowers.join(' ')}`.trim();
 }
 
 module.exports = capitalsFirst;
