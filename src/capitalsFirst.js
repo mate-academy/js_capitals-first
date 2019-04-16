@@ -20,27 +20,28 @@
  *
  * @returns {string} - string with uppercase words in front
  */
+const isLetter = word => word[0].toLowerCase() !== word[0].toUpperCase();
+
 function isUpperCased(word) {
-  return word && word[0] === word[0].toUpperCase() && /[A-ZА-Я]/.test(word[0]);
+  return word && word[0] !== word[0].toLowerCase() && isLetter(word);
 }
 
 function isLowerCased(word) {
-  return word && word[0] === word[0].toLowerCase() && /[a-zа-я]/.test(word[0]);
+  return word && word[0] === word[0].toLowerCase() && word[0] && isLetter(word);
 }
 
 function capitalsFirst(str) {
-  let wordsLowerCase = [];
-  let wordsUpperCase = [];
+  let lowerCaseWords = [];
+  let upperCaseWords = [];
   let allWords = str.split(' ');
   for (let word of allWords) {
     if (isUpperCased(word)) {
-      wordsUpperCase.push(word);
+      upperCaseWords.push(word);
     } else if (isLowerCased(word)) {
-      wordsLowerCase.push(word);
+      lowerCaseWords.push(word);
     }
   }
-  let sortedWords = wordsUpperCase.concat(wordsLowerCase);
-  let result = sortedWords.join(' ');
+  let result = [...upperCaseWords, ...lowerCaseWords].join(' ');
   return result;
 }
 
