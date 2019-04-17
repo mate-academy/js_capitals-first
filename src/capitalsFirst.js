@@ -21,17 +21,11 @@ function capitalsFirst(str) {
   let upperWords = [];
   let lowerWords = [];
   str.split(' ').map((el) => {
-    return isNaN(el[0]) && el[0] !== '='
+    return el[0].toUpperCase() !== el[0].toLowerCase()
       ? el[0] === el[0].toUpperCase()
         ? upperWords.push(el) : lowerWords.push(el) : false;
-    // if (el[0] === el[0].toUpperCase() && isNaN(el[0]) && el[0] !== '=') {
-    //   upperWords.push(el);
-    // } else if (isNaN(el[0]) && el[0] !== '=') {
-    //   lowerWords.push(el);
-    // };
   });
-  upperWords.push(...lowerWords);
-  return upperWords.join(' ');
+  return [...upperWords, ...lowerWords].join(' ');
 }
 
 module.exports = capitalsFirst;
