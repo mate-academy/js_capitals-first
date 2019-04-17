@@ -19,6 +19,23 @@
  */
 function capitalsFirst(str) {
   // write code here
+  let transformedString = str.split(' ');
+  let upperArray = [];
+  let lowerArray = [];
+
+  transformedString.forEach(element => {
+    if (isUpper(element[0])) {
+      upperArray.push(element);
+    } else if (isLower(element[0])) {
+      lowerArray.push(element);
+    }
+  });
+  // Early i used concat-method in return
+  return [...upperArray, ...lowerArray].join(' ');
 }
+
+const isLetter = s => s.toUpperCase() !== s.toLowerCase();
+const isUpper = symbol => symbol.toUpperCase() === symbol && isLetter(symbol);
+const isLower = symbol => symbol.toLowerCase() === symbol && isLetter(symbol);
 
 module.exports = capitalsFirst;
