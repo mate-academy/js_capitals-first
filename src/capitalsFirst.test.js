@@ -47,8 +47,8 @@ test('should work for "Av3p P=qup fjn act 8+g yjznb eb wy"', () => {
     .toBe('Av3p P=qup fjn act yjznb eb wy');
 });
 
-test('should work for "3g0rh Jl 608 ynp2 lfcxp7 hgknu 6z H2+8k"', () => {
-  expect(capitalsFirst('3g0rh Jl 608 ynp2 lfcxp7 hgknu 6z H2+8k'))
+test('should work for "3g0rh Jl 608 ynp2 lfcxp7 %ah#5k hgknu 6z H2+8k"', () => {
+  expect(capitalsFirst('3g0rh Jl 608 ynp2 lfcxp7 %ah#5k hgknu 6z H2+8k'))
     .toBe('Jl H2+8k ynp2 lfcxp7 hgknu');
 });
 
@@ -57,7 +57,7 @@ test('should work for "d2ffa =8du yh Ug7"', () => {
     .toBe('Ug7 d2ffa yh');
 });
 
-test('should work for "Ahljf W0z9f F@p W3scd 9axp@o"', () => {
-  expect(capitalsFirst('Ahljf W0z9f F@p W3scd 9axp@o'))
+test('should work for "Ahljf W0z9f F@p W3scd 9axp@o $jiad8"', () => {
+  expect(capitalsFirst('Ahljf W0z9f F@p W3scd 9axp@o $jiad8'))
     .toBe('Ahljf W0z9f F@p W3scd');
 });
