@@ -31,18 +31,17 @@
 function capitalsFirst(str) {
   // write code here
   const arr = str.split(' ');
-  const newArr = [];
+  const newArr1 = [];
+  const newArr2 = [];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i][0] >= 'A' && arr[i][0] <= 'Z') {
-      newArr.push(arr[i]);
+      newArr1.push(arr[i]);
+    } else if (arr[i][0] >= 'a' && arr[i][0] <= 'z') {
+      newArr2.push(arr[i]);
     }
   }
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i][0] >= 'a' && arr[i][0] <= 'z') {
-      newArr.push(arr[i]);
-    }
-  }
-  return newArr.join(' ');
+  const final = newArr1.join(' ') + ' ' + newArr2.join(' ');
+  return final.trim();
 }
 
 module.exports = capitalsFirst;
