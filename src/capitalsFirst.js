@@ -20,14 +20,13 @@
 function capitalsFirst(str) {
   const arr = str.split(' ');
   const newArr = [];
+  let whereBigStop = 0;
   for (let i = 0; i < arr.length; i++) {
     /* http://bit.ly/2Q0GClW */
     if (!arr[i][0].match((/^[^A-Z]/))) {
-      newArr.push(arr[i]);
-    }
-  }
-  for (let i = 0; i < arr.length; i++) {
-    if (!arr[i][0].match((/^[^a-z]/))) {
+      newArr.splice(whereBigStop, 0, arr[i]);
+      whereBigStop++;
+    } else if (!arr[i][0].match((/^[^a-z]/))) {
       newArr.push(arr[i]);
     }
   }
