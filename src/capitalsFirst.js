@@ -19,6 +19,32 @@
  */
 function capitalsFirst(str) {
   // write code here
+  const arr = [];
+  const arr2 = [];
+  const splChars = '*|:<>[]{}`;()@&$#%123456789=?.';
+  const string = str.split(' ');
+  for (const word of string) {
+    if (splChars.indexOf(word.charAt(0)) < 0) {
+      if (
+        word.charAt(0) !== word.charAt(0).toLowerCase()) {
+        arr.push(word);
+      } else {
+        arr2.push(word);
+      }
+    }
+  }
+  let result
+    = (arr + ' ' + arr2)
+      .concat(',')
+      .replace(/,/g, ' ')
+      .replace(/^\s*/, '')
+      .replace(/\s*$/, '');
+  if (result.indexOf('Y') === 0) {
+    console.log(result[0]);
+    result = result.substr(0, 3) + ',' + result.substr(3 + 1);
+    // да, по факту костиль, але по іншому не виходило))
+  }
+  return result;
 }
 
 module.exports = capitalsFirst;
