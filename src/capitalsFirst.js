@@ -33,14 +33,16 @@ function capitalsFirst(str) {
       }
     }
   }
-  const result = arr.length < 0
-    ? arr2.join(' ').replace(/^\s*/, '').replace(/\s*$/, '')
-    : arr2.length < 0
-      ? arr.join(' ').replace(/^\s*/, '').replace(/\s*$/, '')
-      : (arr.join(' ') + ' ' + arr2.join(' ')
-      ).replace(/^\s*/, '').replace(/\s*$/, '');
   console.log('arr', arr, 'arr2', arr2);
-  return result;
+  if (arr2.length > 0 && arr.length > 0) {
+    return arr.join(' ') + ' ' + arr2.join(' ');
+  } else if (arr.length === 0 && arr2.length > 0) {
+    return arr2.join(' ');
+  } else if (arr2.length === 0 && arr.length > 0) {
+    return arr.join(' ');
+  } else {
+    return arr.join(' ') && arr2.join(' ');
+  }
 }
 
 module.exports = capitalsFirst;
