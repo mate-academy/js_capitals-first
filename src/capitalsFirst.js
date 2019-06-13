@@ -33,17 +33,13 @@ function capitalsFirst(str) {
       }
     }
   }
-  let result
-    = (arr + ' ' + arr2)
-      .concat(',')
-      .replace(/,/g, ' ')
-      .replace(/^\s*/, '')
-      .replace(/\s*$/, '');
-  if (result.indexOf('Y') === 0) {
-    console.log(result[0]);
-    result = result.substr(0, 3) + ',' + result.substr(3 + 1);
-    // да, по факту костиль, але по іншому не виходило))
-  }
+  const result = arr.length < 0
+    ? arr2.join(' ').replace(/^\s*/, '').replace(/\s*$/, '')
+    : arr2.length < 0
+      ? arr.join(' ').replace(/^\s*/, '').replace(/\s*$/, '')
+      : (arr.join(' ') + ' ' + arr2.join(' ')
+      ).replace(/^\s*/, '').replace(/\s*$/, '');
+  console.log('arr', arr, 'arr2', arr2);
   return result;
 }
 
