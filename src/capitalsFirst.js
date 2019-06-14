@@ -21,10 +21,10 @@ function capitalsFirst(str) {
   // write code here
   const arr = [];
   const arr2 = [];
-  const splChars = '*|:<>[]{}`;()@&$#%123456789=?.';
+  const letters = /^[A-Za-z]+$/;
   const string = str.split(' ');
   for (const word of string) {
-    if (splChars.indexOf(word.charAt(0)) < 0) {
+    if (word.charAt(0).match(letters)) {
       if (
         word.charAt(0) !== word.charAt(0).toLowerCase()) {
         arr.push(word);
@@ -33,16 +33,7 @@ function capitalsFirst(str) {
       }
     }
   }
-  console.log('arr', arr, 'arr2', arr2);
-  if (arr2.length > 0 && arr.length > 0) {
-    return arr.join(' ') + ' ' + arr2.join(' ');
-  } else if (arr.length === 0 && arr2.length > 0) {
-    return arr2.join(' ');
-  } else if (arr2.length === 0 && arr.length > 0) {
-    return arr.join(' ');
-  } else {
-    return arr.join(' ') && arr2.join(' ');
-  }
+  return arr.concat(arr2).join(' ');
 }
 
 module.exports = capitalsFirst;
