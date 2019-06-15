@@ -22,17 +22,17 @@ function capitalsFirst(str) {
   const arrayFromStr = str.split(' ');
   const isLetter = /[a-z]/i;
 
-  for (let i = 0; i < arrayFromStr.length; i++) {
-    if (arrayFromStr[i][0] === arrayFromStr[i][0].toUpperCase()
-      && arrayFromStr[i][0].match(isLetter)) {
-      resultArray.push(arrayFromStr[i]);
+  for (const key in arrayFromStr) {
+    if (arrayFromStr[key][0] === arrayFromStr[key][0].toUpperCase()
+      && arrayFromStr[key][0].match(isLetter)) {
+      resultArray.push(arrayFromStr[key]);
     }
   }
 
-  for (let i = 0; i < arrayFromStr.length; i++) {
-    if (arrayFromStr[i][0] === arrayFromStr[i][0].toLowerCase()
-      && arrayFromStr[i][0].match(isLetter)) {
-      resultArray.push(arrayFromStr[i]);
+  for (const key in arrayFromStr) {
+    if (arrayFromStr[key][0] === arrayFromStr[key][0].toLowerCase()
+      && arrayFromStr[key][0].match(isLetter)) {
+      resultArray.push(arrayFromStr[key]);
     }
   }
 
