@@ -24,10 +24,9 @@ function capitalsFirst(str) {
   const lowerFirstStr = [];
 
   for (let i = 0; i < separatedStr.length; i++) {
-    if (separatedStr[i][0] === separatedStr[i][0].toUpperCase()
-      && separatedStr[i][0].match(/[A-Za-z]/)) {
+    if (separatedStr[i][0].match(/[A-Z]/)) {
       capitalFirstStr.push(separatedStr[i]);
-    } else if (separatedStr[i][0].match(/[A-Za-z]/)) {
+    } else if (separatedStr[i][0].match(/[a-z]/)) {
       lowerFirstStr.push(separatedStr[i]);
     }
   }
