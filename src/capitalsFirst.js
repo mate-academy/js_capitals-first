@@ -19,6 +19,20 @@
  */
 function capitalsFirst(str) {
   // write code here
+  const separatedStr = str.split(' ');
+  const capitalFirstStr = [];
+  const lowerFirstStr = [];
+
+  for (let i = 0; i < separatedStr.length; i++) {
+    if (separatedStr[i][0] === separatedStr[i][0].toUpperCase()
+      && separatedStr[i][0].match(/[A-Za-z]/)) {
+      capitalFirstStr.push(separatedStr[i]);
+    } else if (separatedStr[i][0].match(/[A-Za-z]/)) {
+      lowerFirstStr.push(separatedStr[i]);
+    }
+  }
+
+  return [...capitalFirstStr, ...lowerFirstStr].join(' ');
 }
 
 module.exports = capitalsFirst;
