@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * Implement capitalsFirst function:
  *
@@ -17,8 +16,20 @@
  *
  * @returns {string} - string with uppercase words in front
  */
-function capitalsFirst(str) {
-  // write code here
-}
-
+const capitalsFirst = (str) => {
+  const arr = str.split(' ');
+  const upperArr = [];
+  const lowerArr = [];
+  for (const w of arr) {
+    if (!w.charAt(0).match(/[a-zA-Z]/)) {
+      continue;
+    }
+    if (w.charAt(0) === w.charAt(0).toUpperCase()) {
+      upperArr.push(w);
+    } else {
+      lowerArr.push(w);
+    }
+  }
+  return upperArr.concat(lowerArr).join(' ');
+};
 module.exports = capitalsFirst;
