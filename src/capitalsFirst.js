@@ -19,6 +19,20 @@
  */
 function capitalsFirst(str) {
   // write code here
+  const uppercaseWords = [];
+  const lowercaseWords = [];
+  const arrayOfWords = str.split(' ');
+
+  for (let i = 0; i < arrayOfWords.length; i++) {
+    if (!arrayOfWords[i][0].match(/[0-9=?.&$]/)
+    && arrayOfWords[i][0] === arrayOfWords[i][0].toUpperCase()) {
+      uppercaseWords.push(arrayOfWords[i]);
+    } else if (!arrayOfWords[i][0].match(/[0-9=?.&$]/)
+    && arrayOfWords[i][0] === arrayOfWords[i][0].toLowerCase()) {
+      lowercaseWords.push(arrayOfWords[i]);
+    }
+  }
+  return uppercaseWords.concat(lowercaseWords).join(' ');
 }
 
 module.exports = capitalsFirst;
