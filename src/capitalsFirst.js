@@ -19,12 +19,14 @@
  */
 function capitalsFirst(str) {
   const strToArr = str.split(' ');
+  const regExpForCapitals = (/^[A-Z]+\S*/g);
+  const regExpForLowercase = (/^[a-z]+\S*/g);
   let capitals = '';
   let lowercase = '';
   for (let i = 0; i < strToArr.length; i++) {
-    if (strToArr[i].match(/^[A-Z]+\S*/g) != null) {
+    if (strToArr[i].match(regExpForCapitals) != null) {
       capitals = capitals + ' ' + strToArr[i];
-    } else if (strToArr[i].match(/^[a-z]+\S*/g) != null) {
+    } else if (strToArr[i].match(regExpForLowercase) != null) {
       lowercase = lowercase + ' ' + strToArr[i];
     }
   }
