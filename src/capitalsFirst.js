@@ -21,7 +21,7 @@ function capitalsFirst(str) {
   // write code here
   const arrUpper = [];
   const arrLower = [];
-  const letters = /^[A-Za-z]+$/;
+  const letters = /^[A-Za-z]/;
   const arrStr = str.split(' ');
   for (const word of arrStr) {
     if (word.charAt(0).match(letters)) {
