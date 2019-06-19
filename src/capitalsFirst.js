@@ -19,8 +19,9 @@
  */
 function capitalsFirst(str) {
   const arr = str.split(' ');
-  const finishArr = [];
   const lettersArr = [];
+  const upperCaseArr = [];
+  const lowerCaseArr = [];
 
   arr.forEach((item) => {
     if (item[0].match(/[a-z]/gi)) {
@@ -30,15 +31,13 @@ function capitalsFirst(str) {
 
   lettersArr.forEach(item => {
     if (item[0] === item[0].toUpperCase()) {
-      finishArr.push(item);
+      upperCaseArr.push(item);
+    } else {
+      lowerCaseArr.push(item);
     }
   });
 
-  lettersArr.forEach(item => {
-    if (item[0] === item[0].toLowerCase()) {
-      finishArr.push(item);
-    }
-  });
+  const finishArr = upperCaseArr.concat(lowerCaseArr);
 
   const finishStr = finishArr.join(' ');
   return finishStr;
