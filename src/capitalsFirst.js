@@ -26,8 +26,7 @@ function capitalsFirst(str) {
     if (!arr[i][0].match(/[0-9=?.&$]/)) {
       if (arr[i][0] === arr[i][0].toUpperCase()) {
         upper.push(arr[i]);
-      };
-      if (arr[i][0] === arr[i][0].toLowerCase()) {
+      } else {
         lower.push(arr[i]);
       };
     };
