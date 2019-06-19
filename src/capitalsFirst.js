@@ -21,10 +21,9 @@ function capitalsFirst(str) {
   const arr = str.split(' ');
   const finishArr = [];
   const lettersArr = [];
-  const notOurChars = '~!@#$%^&*()_+=-1234567890.+-*/`\\|.,<>?';
 
   arr.forEach((item) => {
-    if (notOurChars.indexOf(item[0]) === -1) {
+    if (item[0].match(/[a-z]/gi)) {
       lettersArr.push(item);
     }
   });
