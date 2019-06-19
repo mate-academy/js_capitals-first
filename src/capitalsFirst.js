@@ -19,6 +19,21 @@
  */
 function capitalsFirst(str) {
   // write code here
+  const words = str.split(' ');
+  const lower = [];
+  const upper = [];
+
+  for (const word of words) {
+    if (word.charCodeAt(0) > 64 && word.charCodeAt(0) < 91) {
+      upper.push(word);
+    }
+    if (word.charCodeAt(0) > 96 && word.charCodeAt(0) < 123) {
+      lower.push(word);
+    }
+  }
+
+  upper.push(...lower);
+  return upper.join(' ');
 }
 
 module.exports = capitalsFirst;
