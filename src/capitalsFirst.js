@@ -11,7 +11,7 @@
  * If a word starts with a number or special character, skip the word and leave
  * it out of the result. Input String will not be empty.
  *
- * capitalFirst("hey a You, Sort me Already!") === "You, Sort Already! hey me"
+ * capitalFirst("hey You, Sort me Already!") === "You, Sort Already! hey me"
  *
  * @param {string} str
  *
