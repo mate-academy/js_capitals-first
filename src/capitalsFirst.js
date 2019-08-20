@@ -23,13 +23,15 @@ function capitalsFirst(str) {
   });
   const upperWords = [];
 
-  arrString.forEach((word) => {
-    if (word[0] === word[0].toUpperCase()) {
-      upperWords.push(word);
+  arrString.forEach((word, index, arr) => {
+    if (index === 0) {
+      arr.forEach((upperWord) => {
+        if (upperWord[0] === upperWord[0].toUpperCase()) {
+          upperWords.push(upperWord);
+        }
+      });
     }
-  });
 
-  arrString.forEach((word) => {
     if (!upperWords.includes(word)) {
       upperWords.push(word);
     }
