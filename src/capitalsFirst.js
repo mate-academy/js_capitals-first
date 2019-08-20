@@ -21,11 +21,11 @@ function capitalsFirst(str) {
   const upperCase = [];
   const lowerCase = [];
 
-  str.split(' ').map(elem =>
-    (elem[0] === elem[0].toUpperCase() ? upperCase : lowerCase).push(elem));
+  str.split(' ').filter(item => item[0].match(/[a-zA-Z]/g))
+    .forEach(elem =>
+      (elem[0] === elem[0].toUpperCase() ? upperCase : lowerCase).push(elem));
 
-  return upperCase.concat(lowerCase)
-    .filter(item => item[0].match(/[a-zA-Z]/g)).join(' ');
+  return [...upperCase, ...lowerCase].join(' ');
 }
 
 module.exports = capitalsFirst;
