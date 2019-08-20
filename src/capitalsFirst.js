@@ -20,16 +20,22 @@
 
 function capitalsFirst(str) {
   const arr = str.split(' ');
-  const sortedArray = [];
-  const arrLower = [];
+  // const sortedArray = [];
+  // const arrLower = [];
 
-  for (const word of arr) {
-    if (word[0].match(/[a-zA-Z]/) && word[0] === word[0].toUpperCase()) {
-      sortedArray.push(word);
-    } else if (word[0].match(/[a-zA-Z]/)) {
-      arrLower.push(word);
-    }
-  }
+  const sortedArray = arr.filter(strs => {
+    return strs.toLowerCase() !== strs;
+  });
+  const arrLower = arr.filter(strs => {
+    return strs[0].match(/[a-zA-Z]/) && strs.toLowerCase() === strs;
+  });
+  // for (const word of arr) {
+  //   if (word[0].match(/[a-zA-Z]/) && word[0] === word[0].toUpperCase()) {
+  //     sortedArray.push(word);
+  //   } else if (word[0].match(/[a-zA-Z]/)) {
+  //     arrLower.push(word);
+  //   }
+  // }
 
   for (const word of arrLower) {
     sortedArray.push(word);
