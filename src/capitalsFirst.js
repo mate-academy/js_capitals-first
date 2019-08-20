@@ -18,14 +18,16 @@
  * @returns {string} - string with uppercase words in front
  */
 function capitalsFirst(str) {
-  const cleanStr = (str
+  const cleanStr = str
     .split(' ')
-    .filter(item => !/[^A-Za-z]/.test(item[0])) || []).join(' ');
+    .filter(item => !/[^A-Za-z]/.test(item[0])).join(' ');
 
   return `${(cleanStr
-    .match(/\b[A-Z][^\s]*\b[,!.]*/g) || []).join(' ')} ${cleanStr
+    .match(/\b[A-Z][^\s]*\b[,!.]*/g) || [])
+    .join(' ')} ${cleanStr
     .replace(/(\b[A-Z][^\s]*\b[,!.]*)/g, '')
-    .replace(/\s\s+/g, ' ').trim()}`.trim();
+    .replace(/\s\s+/g, ' ')
+    .trim()}`.trim();
 }
 
 module.exports = capitalsFirst;
