@@ -29,7 +29,7 @@ function capitalsFirst(str) {
   };
 
   return str.split(' ')
-    .filter(item => item.match(/^[a-zA-Z]/))
+    .filter(word => word.match(/^[a-zA-Z]/))
     .sort(toSortByCapital)
     .join(' ');
 }
