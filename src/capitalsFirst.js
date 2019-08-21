@@ -20,18 +20,10 @@
 
 function capitalsFirst(str) {
   const arr = str.split(' ').filter(value => /[A-z]/.test(value[0]));
-  let strUpper = '';
-  let strLower = '';
+  const strUpper = arr.filter(value => value[0] === value[0].toUpperCase());
+  const strLower = arr.filter(value => value[0] === value[0].toLowerCase());
 
-  for (const value of arr) {
-    value[0] === value[0].toUpperCase()
-      ? strUpper += value + ' '
-      : strLower += value + ' ';
-  }
-
-  const result = strUpper + strLower;
-
-  return result.slice(0, result.length - 1);
+  return [...strUpper, ...strLower].join(' ');
 }
 
 module.exports = capitalsFirst;
