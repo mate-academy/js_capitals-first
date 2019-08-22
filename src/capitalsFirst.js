@@ -18,10 +18,9 @@
  * @returns {string} - string with uppercase words in front
  */
 function capitalsFirst(str) {
-  const string = str.split(' ');
-  const wordsUper = string.filter(element => element[0].match(/^[A-Z]/));
-  const wordsLower = string.filter(element => element[0].match(/^[a-z]/));
-  const result = [...wordsUper, ...wordsLower].join(' ');
-  return result;
+  const arrFromStr = str.split(' ');
+  const wordsUper = arrFromStr.filter(element => element[0].match(/^[A-Z]/));
+  const wordsLower = arrFromStr.filter(element => element[0].match(/^[a-z]/));
+  return [...wordsUper, ...wordsLower].join(' ');
 };
 module.exports = capitalsFirst;
