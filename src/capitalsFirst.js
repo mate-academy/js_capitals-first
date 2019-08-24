@@ -29,8 +29,8 @@ function capitalsFirst(str) {
       lowercase.push(item);
     }
   }
-  const result = uppercase.concat(lowercase).join(' ');
-  return result;
+  
+  return [...uppercase, ...lowercase].join(' ');
 }
 
 module.exports = capitalsFirst;
