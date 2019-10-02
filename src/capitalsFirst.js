@@ -18,7 +18,21 @@
  * @returns {string} - string with uppercase words in front
  */
 function capitalsFirst(str) {
-  // write code here
+  const newArr = [];
+  const braekToArr = str.split(' ');
+
+  for (let i = 0; i < braekToArr.length; i++) {
+    if (/\b^[A-Z]/.test(braekToArr[i])) {
+      newArr.push(braekToArr[i]);
+    };
+  };
+
+  for (let i = 0; i < braekToArr.length; i++) {
+    if (/\b^[a-z]/.test(braekToArr[i])) {
+      newArr.push(braekToArr[i]);
+    };
+  };
+  return newArr.join(' ');
 }
 
 module.exports = capitalsFirst;
