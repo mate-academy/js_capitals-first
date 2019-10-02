@@ -20,8 +20,8 @@
 function capitalsFirst(str) {
 
 const strList = str.split(' ')
+
 .filter(a => /^[a-zA-Z]/.test(a));
-console.log(strList);
 const arr1 = strList
   .filter(letter => letter[0] === letter[0].toUpperCase());
 const arr2 = strList
