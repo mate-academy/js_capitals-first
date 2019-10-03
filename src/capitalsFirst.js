@@ -20,16 +20,19 @@
 function capitalsFirst(str) {
   const resUpper = [];
   const resLower = [];
-  str.split(' ').forEach(word => {
-    const firstLet = word[0];
-    if (firstLet.toUpperCase() !== firstLet.toLowerCase()) {
-      if (word[0] === word[0].toUpperCase()) {
+  str.split(' ').filter(word => {
+    const firstLetCode = word.charCodeAt(0);
+    return (firstLetCode > 64 && firstLetCode < 91)
+      || (firstLetCode > 96 && firstLetCode < 123);
+  })
+    .forEach(word => {
+      const firstLet = word[0];
+      if (firstLet === firstLet.toUpperCase()) {
         resUpper.push(word);
       } else {
         resLower.push(word);
       }
-    }
-  });
+    });
   return resUpper.concat(resLower).join(' ');
 }
 
