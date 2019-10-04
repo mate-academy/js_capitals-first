@@ -21,7 +21,7 @@ function capitalsFirst(str) {
   const upperCaseArr = str.split(' ').filter(el => el[0].match(/\b[A-Z]/g));
   const lowCaseArr = str.split(' ').filter(el => el[0].match(/\b[a-z]/g));
 
-  return ((upperCaseArr.join(' ') + ' ' + lowCaseArr.join(' ')).trim());
+  return ([...upperCaseArr, ...lowCaseArr].join(' '));
 }
 
 module.exports = capitalsFirst;
