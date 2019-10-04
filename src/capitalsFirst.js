@@ -21,11 +21,12 @@ function capitalsFirst(str) {
   const result = '';
   let uperrWords = '';
   let lowerWords = '';
-  uperrWords = str.split(' ').filter(function(item) {
+  const strWithSpace = str.split(' ');
+  uperrWords = strWithSpace.filter(function(item) {
     return (item[0].match(/[A-Z]/));
   }).join(' ');
 
-  lowerWords = str.split(' ').filter(function(item) {
+  lowerWords = strWithSpace.filter(function(item) {
     return (item[0].match(/[a-z]/));
   }).join(' ');
 
