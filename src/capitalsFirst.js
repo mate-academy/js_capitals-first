@@ -18,19 +18,18 @@
  * @returns {string} - string with uppercase words in front
  */
 function capitalsFirst(str) {
-  const result = '';
-  let uperrWords = '';
-  let lowerWords = '';
+  const uperrWords = [];
+  const lowerWords = [];
   const strWithSpace = str.split(' ');
-  uperrWords = strWithSpace.filter(function(item) {
-    return (item[0].match(/[A-Z]/));
-  }).join(' ');
-
-  lowerWords = strWithSpace.filter(function(item) {
-    return (item[0].match(/[a-z]/));
-  }).join(' ');
-
-  return result.concat(uperrWords, ' ', lowerWords).trim();
+  strWithSpace.forEach(element => {
+    if (element[0].match(/[A-Z]/)) {
+      uperrWords.push(element + ' ');
+    }
+    if (element[0].match(/[a-z]/)) {
+      lowerWords.push(element + ' ');
+    }
+  });
+  return [...uperrWords, ...lowerWords].join('').trim();
 }
 
 module.exports = capitalsFirst;
