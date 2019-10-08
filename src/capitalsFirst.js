@@ -20,16 +20,15 @@
 function capitalsFirst(str) {
   const uperrWords = [];
   const lowerWords = [];
-  const strWithSpace = str.split(' ');
-  strWithSpace.forEach(element => {
+  str.split(' ').forEach(element => {
     if (element[0].match(/[A-Z]/)) {
-      uperrWords.push(element + ' ');
+      uperrWords.push(element);
     }
     if (element[0].match(/[a-z]/)) {
-      lowerWords.push(element + ' ');
+      lowerWords.push(element);
     }
   });
-  return [...uperrWords, ...lowerWords].join('').trim();
+  return [...uperrWords, ...lowerWords].join(' ').trim();
 }
 
 module.exports = capitalsFirst;
