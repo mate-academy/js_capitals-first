@@ -19,18 +19,18 @@
  */
 function capitalsFirst(str) {
   const wordsArr = str.split(' ');
-  let upperWords = '';
-  let lowerWords = '';
+  const upperWords = [];
+  const lowerWords = [];
 
   for (const word of wordsArr) {
     if (word[0].search(/[A-Z]/g) !== -1) {
-      upperWords += word + ' ';
+      upperWords.push(word);
     } else if (word[0].search(/[a-z]/g) !== -1) {
-      lowerWords += word + ' ';
+      lowerWords.push(word);
     }
   }
 
-  return (upperWords + lowerWords).trim();
+  return [...upperWords, ...lowerWords].join(' ');
 }
 
 module.exports = capitalsFirst;
