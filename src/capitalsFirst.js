@@ -18,7 +18,6 @@
  * @returns {string} - string with uppercase words in front
  */
 function capitalsFirst(str) {
-  // write code here
   const arr = str.split(/\s+/).filter(elem => /^[a-zA-z]/.test(elem));
   const upperCaseArray = [];
   const lowerCaseArray = [];
