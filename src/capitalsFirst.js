@@ -10,7 +10,7 @@
  *
  * If a word starts with a number or special character, skip the word and leave
  * it out of the result. Input String will not be empty.
- *
+
  * capitalFirst("hey You, Sort me Already!") === "You, Sort Already! hey me"
  *
  * @param {string} str
@@ -18,7 +18,11 @@
  * @returns {string} - string with uppercase words in front
  */
 function capitalsFirst(str) {
-  // write code here
+  let upArr = [];
+  let lowArr = [];
+  upArr = str.split(' ').filter(word => word[0].match(/^[A-Z]/g));
+  lowArr = str.split(' ').filter(word => word[0].match(/^[a-z]/g));
+  return [...upArr, ...lowArr].join(' ');
 }
-
+capitalsFirst('hey You, Sort me Already!');
 module.exports = capitalsFirst;
