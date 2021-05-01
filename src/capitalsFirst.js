@@ -18,7 +18,27 @@
  * @returns {string} - string with uppercase words in front
  */
 function capitalsFirst(str) {
-  // write code here
+  let words = str.split(' ');
+  let upperCase = [];
+  let lowerCase = [];
+  for (let i = 0; i < words.length; i++) {
+    var symbol = words[i].charAt(0);
+    var antiSymbol = symbol;
+    if (symbol.toUpperCase() === symbol.toLowerCase()) {
+      continue;
+    }
+    // Ну зато теперь тут нет условия (symbol >= 'A' && symbol <= 'Z') :)
+    if (antiSymbol.toUpperCase() === symbol) {
+      upperCase.push(words[i]);
+    } else if (antiSymbol.toLowerCase() === symbol) {
+      lowerCase.push(words[i]);
+    }
+  }
+  if (lowerCase.length !== 0) {
+    symbol = ' ';
+  } else symbol = '';
+  let result = upperCase.join(' ') + symbol + lowerCase.join(' ');
+  return result;
 }
 
 module.exports = capitalsFirst;
