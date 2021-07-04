@@ -19,6 +19,13 @@
  */
 function capitalsFirst(str) {
   // write code here
+  const uppercaseWords = str.split(' ').filter(
+    item => item[0].match(/^[A-Z]/g)
+  );
+  const lowercaseWords = str.split(' ').filter(
+    item => item[0].match(/^[a-z]/g)
+  );
+  return [...uppercaseWords, ...lowercaseWords].join(' ');
 }
 
 module.exports = capitalsFirst;
