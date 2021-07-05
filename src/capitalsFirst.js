@@ -19,6 +19,27 @@
  */
 function capitalsFirst(str) {
   // write code here
+  const words = str.split(' ');
+  const wordsUpp = [];
+  const wordsLow = [];
+  let resultStr = '';
+  const re = new RegExp(`[0-9$=?&.#!]`);
+
+  for (let i = 0; i < words.length; i++) {
+    if (!re.test(words[i][0])) {
+      (words[i][0] === words[i][0].toUpperCase()) ? wordsUpp.push(words[i]) : wordsLow.push(words[i]);
+    }
+  }
+
+  for (let i = 0; i < wordsUpp.length; i++) {
+    resultStr += wordsUpp[i] + ' ';
+  }
+
+  for (let i = 0; i < wordsLow.length; i++) {
+    resultStr += wordsLow[i] + ' ';
+  }
+
+  return resultStr.trim();
 }
 
 module.exports = capitalsFirst;
