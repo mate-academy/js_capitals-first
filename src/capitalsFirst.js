@@ -17,8 +17,24 @@
  *
  * @returns {string} - string with uppercase words in front
  */
+
 function capitalsFirst(str) {
-  // write code here
+  function isBigLetter(word) {
+    return word[0].charCodeAt() > 64 && word[0].charCodeAt() < 91;
+  }
+  function isSmallLetter(word) {
+    return word[0].charCodeAt() > 96 && word[0].charCodeAt() < 123;
+  }
+  const bigFirstletter = [];
+  const smallFirsLetter = [];
+  str.split(' ').forEach(word => {
+    if (isBigLetter(word)) {
+      bigFirstletter.push(word);
+    } else if (isSmallLetter(word)) {
+      smallFirsLetter.push(word);
+    }
+  });
+  return [...bigFirstletter, ...smallFirsLetter].join(' ');
 }
 
 module.exports = capitalsFirst;
