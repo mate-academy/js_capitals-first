@@ -19,6 +19,19 @@
  */
 function capitalsFirst(str) {
   // write code here
+  const arr = str.split(' ');
+  const upper = [];
+  const lower = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!arr[i][0].match(/[0-9=?.&$]/)) {
+      if (arr[i][0] === arr[i][0].toUpperCase()) {
+        upper.push(arr[i]);
+      } else {
+        lower.push(arr[i]);
+      };
+    };
+  };
+  return upper.concat(lower).join(' ');
 }
 
 module.exports = capitalsFirst;
