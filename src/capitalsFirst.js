@@ -18,7 +18,26 @@
  * @returns {string} - string with uppercase words in front
  */
 function capitalsFirst(str) {
-  // write code here
+  let upperStrArr = [];
+  let lowerStrArr = [];
+  let arrWords = str.split(' ');
+  for (let i = 0; i < arrWords.length; i++) {
+  /*
+ Перевірка того, чи належить символ до діапазону спецсимволів.
+ Не переробляю логіку і обмежуюсь коментарем. Не використовую перевірку
+ належності до діапазону А..Z, оскільки ТА раніше радив інший алгоритм.
+*/
+    if (arrWords[i][0].toLowerCase() === arrWords[i][0].toUpperCase()) {
+      continue;
+      /*
+  Перевірка того, чи належить символ до строчних за регістром.
+*/
+    } else if (arrWords[i][0].toLowerCase() === arrWords[i][0]) {
+      lowerStrArr.push(arrWords[i]);
+    } else {
+      upperStrArr.push(arrWords[i]);
+    }
+  }
+  return upperStrArr.concat(lowerStrArr).join(' ');
 }
-
 module.exports = capitalsFirst;
